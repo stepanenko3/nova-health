@@ -1,0 +1,29 @@
+{
+    "name": "stepanenko3/nova-health",
+    "description": "Laravel Nova tool for checking healthy of your Laravel app",
+    "keywords": ["laravel", "nova", "health"],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "laravel/nova": "^4.0",
+        "spatie/laravel-health": "^1.9",
+        "spatie/cpu-load-health-check": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stepanenko3\\NovaHealth\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Stepanenko3\\NovaHealth\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
