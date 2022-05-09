@@ -15,4 +15,3 @@ use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 */
 
 Route::get('/', HealthCheckJsonResultsController::class);
-

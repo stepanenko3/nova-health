@@ -1,7 +1,11 @@
 {
     "name": "stepanenko3/nova-health",
     "description": "Laravel Nova tool for checking healthy of your Laravel app",
-    "keywords": ["laravel", "nova", "health"],
+    "keywords": [
+        "laravel",
+        "nova",
+        "health"
+    ],
     "license": "MIT",
     "require": {
         "php": ">=8.0",
@@ -30,6 +34,6 @@
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
