@@ -31,6 +31,11 @@ Homestead.yaml
 
 config/version.yml
 
+package-lock.json
+composer.phar
+composer.lock
+yarn.lock
+
 _ide_helper.php
 _ide_helper_models.php
 .phpstorm.meta.php
@@ -39,7 +44,4 @@ lighthouse-audit*
 
 /node_modules
 /vendor
-
-package-lock.json
-composer.phar
-composer.lock
+/packages
