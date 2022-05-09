@@ -9,6 +9,12 @@
         "spatie/laravel-health": "^1.9",
         "spatie/cpu-load-health-check": "^1.0"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../nova"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Stepanenko3\\NovaHealth\\": "src/"
