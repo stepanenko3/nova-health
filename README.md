@@ -6,7 +6,7 @@
 
 ## Credits
 
-- [Artem Stepanenko(Author & Maintainer)](https://github.com/stepanenko3)
+- [Artem Stepanenko](https://github.com/stepanenko3)
 
 ## Contributing
 
