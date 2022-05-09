@@ -1,5 +1,9 @@
 # Laravel Nova tool for checking healthy of your Laravel app
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/stepanenko3/nova-health.svg?style=flat-square)](https://packagist.org/packages/stepanenko3/nova-health)
+[![Total Downloads](https://img.shields.io/packagist/dt/stepanenko3/nova-health.svg?style=flat-square)](https://packagist.org/packages/stepanenko3/nova-health)
+[![License](https://poser.pugx.org/stepanenko3/nova-health/license)](https://packagist.org/packages/stepanenko3/nova-health)
+
 ## Credits
 
 - [Artem Stepanenko(Author & Maintainer)](https://github.com/stepanenko3)
