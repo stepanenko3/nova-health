@@ -17,17 +17,7 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            // Publish config
-            $this->publishes([
-                __DIR__ . '/../config/' => config_path(),
-            ], 'config');
-        }
-
-        $this->mergeConfigFrom(
-            __DIR__ . '/../config/nova-health.php',
-            'nova-health'
-        );
+        $this->config();
     
         $this->app->booted(function () {
             $this->routes();
@@ -67,5 +57,20 @@ class ToolServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    private function config()
+    {
+        if ($this->app->runningInConsole()) {
+            // Publish config
+            $this->publishes([
+                __DIR__ . '/../config/' => config_path(),
+            ], 'config');
+        }
+
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/nova-health.php',
+            'nova-health'
+        );
     }
 }
