@@ -4,6 +4,8 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/stepanenko3/nova-health.svg?style=flat-square)](https://packagist.org/packages/stepanenko3/nova-health)
 [![License](https://poser.pugx.org/stepanenko3/nova-health/license)](https://packagist.org/packages/stepanenko3/nova-health)
 
+![screenshot of helth tool](screenshots/tool.png)
+
 ## Credits
 
 - [Artem Stepanenko](https://github.com/stepanenko3)
