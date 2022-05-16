@@ -4,7 +4,12 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/stepanenko3/nova-health.svg?style=flat-square)](https://packagist.org/packages/stepanenko3/nova-health)
 [![License](https://poser.pugx.org/stepanenko3/nova-health/license)](https://packagist.org/packages/stepanenko3/nova-health)
 
-![screenshot of helth tool](screenshots/tool.png)
+![screenshot of tool](screenshots/tool.png)
+
+## Screenshots
+
+![screenshot of tool](screenshots/tool-dark.png)
+![screenshot of tool](screenshots/tool-mobile.png)
 
 ## Credits
 
