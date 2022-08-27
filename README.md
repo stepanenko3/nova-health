@@ -23,6 +23,11 @@ You can install the nova tool in to a Laravel app that uses [Nova](https://nova.
 composer require stepanenko3/nova-health
 ```
 
+### Configure
+
+1. Configure spatie/laravel-health [using instructions](https://spatie.be/docs/laravel-health/v1/installation-setup) before continue installing
+2. Add your health checks usgin spatie/laravel-health [docs](https://spatie.be/docs/laravel-health/v1/basic-usage/registering-your-first-check)
+
 Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
 
 ```php
@@ -44,8 +49,6 @@ Publish the config file:
 ``` bash
 php artisan vendor:publish --provider="Stepanenko3\NovaHealth\ToolServiceProvider"
 ```
-
-Add your health checks usgin [spatie/laravel-health docs](https://spatie.be/docs/laravel-health/v1/basic-usage/registering-your-first-check)
 
 ## Usage
 
