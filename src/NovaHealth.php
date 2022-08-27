@@ -28,6 +28,7 @@ class NovaHealth extends Tool
     public function menu(Request $request)
     {
         return MenuSection::make(__(config('nova-health.navigation_label', 'Health')))
-            ->path('/health');
+            ->path('/health')
+            ->icon('heart');
     }
 }
