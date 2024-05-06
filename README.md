@@ -54,6 +54,25 @@ php artisan vendor:publish --provider="Stepanenko3\NovaHealth\ToolServiceProvide
 
 Click on the `"Health"` menu item in your Nova app to see the tool.
 
+``` php
+// app/Providers/AppServiceProvider.php
+
+use Spatie\Health\Facades\Health;
+use Stepanenko3\NovaHealth\Checks\OutdatedPackagesCheck;
+use Stepanenko3\NovaHealth\Checks\SslCheck;
+
+Health::checks([
+    SslCheck::new()
+        ->domain('laravel.com'),
+
+    SslCheck::new()
+        ->domain('snotax.com'),
+
+    OutdatedPackagesCheck::new()
+        ->failWhenOutdatedPackagesIsHigher(1),
+]);
+```
+
 ## Configuration
 
 All the configuration is managed from a single configuration file located in `config/nova-health.php`
