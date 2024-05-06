@@ -73,22 +73,25 @@
 
                     <div
                         v-if="
-                            check.name === 'OutdatedPackages' &&
+                            check.name.startsWith('OutdatedPackages') &&
                             check?.meta?.outdated
                         "
                         class="mt-3 grid gap-1"
                     >
-                        <div v-for="pkg of check.meta.outdated">
+                        <div
+                            v-for="pkg of check.meta.outdated"
+                            class="flex flex-wrap items-center"
+                        >
                             <span
                                 class="inline-block font-bold text-gray-500 mr-1"
                             >
                                 {{ pkg.name }}
                             </span>
-                            <span>{{ pkg.version }} -> {{ pkg.latest }}</span>
+                            <span> {{ pkg.version }} -> {{ pkg.latest }}</span>
                         </div>
                     </div>
                     <div
-                        v-else-if="check.name === 'CpuLoad'"
+                        v-else-if="check.name.startsWith('CpuLoad')"
                         class="mt-3 grid gap-1 text-gray-400"
                     >
                         <div>
@@ -111,7 +114,7 @@
                         </div>
                     </div>
                     <div
-                        v-else-if="check.name === 'DatabaseTableSize'"
+                        v-else-if="check.name.startsWith('DatabaseTableSize')"
                         class="mt-3 grid gap-1"
                     >
                         <div v-for="table of Object.values(check.meta)">
@@ -125,6 +128,43 @@
                                     {{ table.maxSize }}
                                 </span>
                             </div>
+                        </div>
+                    </div>
+                    <div
+                        v-else-if="check.name.startsWith('Ssl')"
+                        class="mt-3 grid gap-1"
+                    >
+                        <div v-if="check?.meta?.domain">
+                            <span class="font-bold"> {{ __("Domain") }}: </span>
+                            <span class="ml-1">
+                                {{ check.meta.domain }}
+                            </span>
+                        </div>
+
+                        <div v-if="check?.meta?.issuer">
+                            <span class="font-bold"> {{ __("Issuer") }}: </span>
+                            <span class="ml-1">
+                                {{ check.meta.issuer }}
+                            </span>
+                        </div>
+
+                        <div v-if="check?.meta?.expiration_date">
+                            <span class="font-bold">
+                                {{ __("Expiration") }}:
+                            </span>
+                            <span class="ml-1">
+                                {{ check.meta.expiration_date }}
+                            </span>
+                            <span class="font-bold ml-1">
+                                ({{
+                                    Math.abs(
+                                        parseInt(
+                                            check.meta.expiration_date_in_days
+                                        )
+                                    )
+                                }}
+                                {{ __("days") }})
+                            </span>
                         </div>
                     </div>
                 </div>

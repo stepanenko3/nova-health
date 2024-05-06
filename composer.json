@@ -10,8 +10,9 @@
     "require": {
         "php": ">=8.0",
         "laravel/nova": "^4.0",
+        "spatie/cpu-load-health-check": "^1.0",
         "spatie/laravel-health": "^1.9",
-        "spatie/cpu-load-health-check": "^1.0"
+        "spatie/ssl-certificate": "^2.6"
     },
     "repositories": [
         {
