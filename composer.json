@@ -15,8 +15,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "../nova"
+            "type": "composer",
+            "url": "https://laravelsatis.com"
         }
     ],
     "autoload": {
@@ -35,5 +35,8 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "tightenco/duster": "^2.7"
+    }
 }

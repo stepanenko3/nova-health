@@ -10,30 +10,26 @@ use Stepanenko3\NovaHealth\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         $this->config();
-    
-        $this->app->booted(function () {
+
+        $this->app->booted(function (): void {
             $this->routes();
         });
 
-        Nova::serving(function (ServingNova $event) {
+        Nova::serving(function (ServingNova $event): void {
+            Nova::style('nova-health', __DIR__ . '/../dist/css/tool.css');
             //
         });
     }
 
-    /**
-     * Register the tool's routes.
-     *
-     * @return void
-     */
-    protected function routes()
+    public function register(): void
+    {
+        //
+    }
+
+    protected function routes(): void
     {
         if ($this->app->routesAreCached()) {
             return;
@@ -42,24 +38,14 @@ class ToolServiceProvider extends ServiceProvider
         $path = config('nova-health.path', 'health');
 
         Nova::router(['nova', Authorize::class], $path)
-            ->group(__DIR__.'/../routes/inertia.php');
+            ->group(__DIR__ . '/../routes/inertia.php');
 
         Route::middleware(['nova', Authorize::class])
             ->prefix('nova-vendor/stepanenko3/nova-health')
-            ->group(__DIR__.'/../routes/api.php');
+            ->group(__DIR__ . '/../routes/api.php');
     }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    private function config()
+    private function config(): void
     {
         if ($this->app->runningInConsole()) {
             // Publish config
