@@ -45,7 +45,7 @@ class OutdatedPackagesCheck extends Check
 
         if ($outdatedCount >= $this->failWhenOutdatedPackagesIsHigher) {
             return $result->failed(
-                "There are {$outdatedCount} outdated packages which is higher than the allowed {$this->failWhenOutdatedPackagesIsHigher}",
+                "There are {$outdatedCount} outdated packages which is higher or equal to the allowed {$this->failWhenOutdatedPackagesIsHigher}",
             );
         }
 
