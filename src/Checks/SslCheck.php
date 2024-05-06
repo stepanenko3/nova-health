@@ -20,18 +20,6 @@ class SslCheck extends Check
         return $this;
     }
 
-    private function buildMetaData(
-        SslCertificate $certificate,
-    ): array {
-        return [
-            'domain' => $certificate->getDomain(),
-            'issuer' => $certificate->getIssuer(),
-            'is_valid' => $certificate->isValid(),
-            'expiration_date' => $certificate->expirationDate()->diffForHumans(),
-            'expiration_date_in_days' => $certificate->expirationDate()->diffInDays(),
-        ];
-    }
-
     public function run(): Result
     {
         try {
@@ -69,5 +57,17 @@ class SslCheck extends Check
             ->beforeLast('Check')
             ->append('_' . $this->domain)
             ->tostring();
+    }
+
+    private function buildMetaData(
+        SslCertificate $certificate,
+    ): array {
+        return [
+            'domain' => $certificate->getDomain(),
+            'issuer' => $certificate->getIssuer(),
+            'is_valid' => $certificate->isValid(),
+            'expiration_date' => $certificate->expirationDate()->diffForHumans(),
+            'expiration_date_in_days' => $certificate->expirationDate()->diffInDays(),
+        ];
     }
 }
