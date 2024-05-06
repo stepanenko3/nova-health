@@ -37,6 +37,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
+        "phpstan/phpstan": "^1.10",
         "tightenco/duster": "^2.7"
     }
 }
