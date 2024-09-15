@@ -175,7 +175,6 @@
 
 <script setup lang="ts">
 import { defineProps, onMounted, ref } from "vue";
-import { useLocalization } from "LaravelNova";
 
 defineProps<{
     card: {
@@ -184,8 +183,6 @@ defineProps<{
         refresh?: boolean;
     };
 }>();
-
-const { __ } = useLocalization();
 
 const loading = ref<boolean>(false);
 const checks = ref<any[]>([]);
