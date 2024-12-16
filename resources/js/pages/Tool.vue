@@ -15,7 +15,7 @@
                 :loading="loading"
                 @click="refresh"
             >
-                <Icon type="refresh" class="w-4 h-4" />
+                <ArrowPathIcon class="w-4 h-4" />
             </div>
         </div>
 
@@ -34,13 +34,13 @@
 
         <div class="grid md:grid-cols-12 gap-6" v-if="checks.length">
             <div
-                class="md:col-span-4 h-full p-6 flex items-start relative overflow-hidden bg-white dark:bg-gray-800 rounded-lg shadow md:col-span-4"
+                class="md:col-span-4 h-full p-6 flex items-start relative overflow-hidden bg-white dark:bg-gray-800 rounded-lg shadow"
                 v-for="check in checks"
             >
-                <Icon
+                <component
                     width="30"
                     height="30"
-                    class="mr-4 flex-shrink-0"
+                    class="mr-4 w-7 h-7 flex-shrink-0"
                     :class="
                         getByStatus(check.status, {
                             ok: 'text-green-500',
@@ -51,14 +51,14 @@
                             default: 'text-gray-500',
                         })
                     "
-                    :type="
+                    :is="
                         getByStatus(check.status, {
-                            ok: 'check-circle',
-                            warning: 'exclamation-circle',
-                            skipped: 'arrow-circle-right',
-                            failed: 'x-circle',
-                            crashed: 'exclamation-circle',
-                            default: 'dots-circle-horizontal',
+                            ok: CheckCircleIcon,
+                            warning: ExclamationCircleIcon,
+                            skipped: ArrowRightCircleIcon,
+                            failed: XCircleIcon,
+                            crashed: ExclamationCircleIcon,
+                            default: EllipsisHorizontalCircleIcon,
                         })
                     "
                 />
@@ -175,6 +175,14 @@
 
 <script setup lang="ts">
 import { defineProps, onMounted, ref } from "vue";
+import {
+    ArrowPathIcon,
+    ArrowRightCircleIcon,
+    CheckCircleIcon,
+    EllipsisHorizontalCircleIcon,
+    ExclamationCircleIcon,
+    XCircleIcon
+} from '@heroicons/vue/16/solid'
 
 defineProps<{
     card: {
