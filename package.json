@@ -6,6 +6,7 @@
         "nova:install": "npm --prefix='vendor/laravel/nova' ci"
     },
     "devDependencies": {
+        "@heroicons/vue": "^2.1.5",
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@vitejs/plugin-vue": "^5.0.4",
